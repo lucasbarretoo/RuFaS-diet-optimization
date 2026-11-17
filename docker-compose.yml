@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  geodatapy:
+    build: .
+    image: docker-py
+    container_name: docker-py
+    restart: always
+    ports:
+      - "5000:5000" # Flask
+      - "5678:5678" # Debugger
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+      - ./tmp:/app/tmp
+    environment:
+      - FLASK_APP=main.py
+      - FLASK_ENV=development
