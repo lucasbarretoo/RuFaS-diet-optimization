@@ -1,0 +1,10 @@
+{
+  "perfil": "restricoes_NASEM_do_otimizador_original",
+  "modo": "automatico",
+  "regiao_inicial": 0.2,
+  "regiao_minima": 0.001,
+  "max_resolucoes": 20,
+  "tolerancia_relativa": 0.000001,
+  "melhoria_relativa_minima": 0.000001,
+  "passo_gradiente": 0.0001
+}

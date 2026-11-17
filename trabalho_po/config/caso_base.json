@@ -1,0 +1,21 @@
+{
+    "nome": "caso_base_114879",
+    "animal_id": 114879,
+    "populacao": "input/data/animal/animal_population.json",
+    "metadata": "input/metadata/example_freestall_dairy_metadata.json",
+    "alimentos": "input/data/feed/example_Midwest_feed.json",
+    "biblioteca": "input/data/feed/NASEM_Comp_with_TDN_urea.csv",
+    "limites": "trabalho_po/config/limites.json",
+    "padrao": "NASEM",
+    "moeda": "USD",
+    "unidade_quantidade": "kg_MS_por_vaca_por_dia",
+    "politica_precos": "exemplo_rufas",
+    "semente": 42,
+    "start_date": "2013:1",
+    "end_date": "2013:365",
+    "hipoteses": {
+        "distancia_diaria_m": 0.0,
+        "temperatura_anterior_C": 20.0,
+        "estado_digestivo": "inicializacao_do_RuFaS_sem_aquecimento"
+    }
+}
