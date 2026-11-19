@@ -1,0 +1,29 @@
+{
+  "start_date": "2013:1",
+  "end_date": "2013:365",
+  "data_avaliacao": "2013:1",
+  "dias_no_periodo": 365,
+  "animal_id_origem": 114879,
+  "animal_id_execucao": 114879,
+  "peso_kg": 636.0708325184818,
+  "dias_em_lactacao": 103,
+  "paridade": 2,
+  "leite_kg_dia": 47.32177487233188,
+  "gordura_leite_percentual": 4,
+  "proteina_verdadeira_leite_percentual": 3.2,
+  "lactose_percentual": 4.85,
+  "escore_corporal": 3.0,
+  "metano_g_dia": 0.0,
+  "nitrogenio_urinario_kg_dia": 0.0,
+  "fosforo_submodelo_g_dia": 23.49366834326159,
+  "alojamento": "barn",
+  "hipoteses": {
+    "distancia_diaria_m": 0.0,
+    "temperatura_anterior_C": 20.0,
+    "estado_digestivo": "inicializacao_do_RuFaS_sem_aquecimento"
+  },
+  "estado_nutricional_anterior": "defaults_RuFaS; previous_nutrition_supply=None",
+  "fator_preco": 1.0,
+  "id_preco": 44,
+  "fator_energia": 1.0
+}

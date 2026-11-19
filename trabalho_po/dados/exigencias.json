@@ -1,0 +1,32 @@
+{
+  "valores": {
+    "maintenance_energy": 12.665697484803808,
+    "growth_energy": 0.8124364950767564,
+    "pregnancy_energy": 0.0,
+    "lactation_energy": 35.55711096550289,
+    "metabolizable_protein": 2744.42105490946,
+    "calcium": 74.09692805277302,
+    "phosphorus": 70.60984922603632,
+    "process_based_phosphorus": 23.49366834326159,
+    "dry_matter": 26.522120531057965,
+    "activity_energy": 0.0,
+    "essential_amino_acids": {
+      "histidine": 71.01321466846161,
+      "isoleucine": 150.75601913110268,
+      "leucine": 251.54329701554124,
+      "lysine": 213.1479295767117,
+      "methionine": 69.30407586021254,
+      "phenylalanine": 154.86787867010597,
+      "threonine": 137.71459327626002,
+      "thryptophan": 34.23954127101731,
+      "valine": 165.14870857578364
+    }
+  },
+  "energia_total_Mcal_dia": 49.035244945383454,
+  "unidades": {
+    "energia": "Mcal/dia",
+    "proteina_metabolizavel": "g/dia",
+    "calcio_e_fosforo": "g/dia",
+    "materia_seca": "kg_MS/dia"
+  }
+}
