@@ -30,13 +30,13 @@ docker compose exec -T geodatapy /app/venv/bin/python --version
 docker compose exec -T geodatapy /app/venv/bin/python -c "import RUFAS, numpy, scipy, matplotlib, pulp; print('PuLP:', pulp.__version__); print('Solvers disponíveis:', pulp.listSolvers(onlyAvailable=True))"
 ```
 
-O ambiente precisa conter as dependências do RuFaS, PuLP e um solver compatível disponível. O código chama `model.solve()`, que utiliza o solver padrão disponível para o PuLP; não seleciona HiGHS. PuLP modela o problema e encaminha sua resolução ao solver.
+O ambiente precisa conter as dependências do RuFaS, PuLP e um solver compatível disponível. O código chama `model.solve()`, que utiliza o solver padrão disponível para o PuLP. PuLP modela o problema e encaminha sua resolução ao solver.
 
 O repositório está montado em `/app` dentro do contêiner. Assim, os arquivos gravados pela execução aparecem nas mesmas pastas do projeto no computador. Esse procedimento utiliza o ambiente existente, sem recriá-lo ou copiar arquivos de exemplo sobre o código atual.
 
 ## 2. Revisar as configurações
 
-As configurações são arquivos JSON (Notação de Objetos JavaScript). A explicação completa dos campos está no [guia de configurações](config/README.md).
+As configurações são arquivos JSON. A explicação completa dos campos está no [guia de configurações](config/README.md).
 
 ### Caso base — `config/caso_base.json`
 

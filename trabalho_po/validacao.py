@@ -91,7 +91,7 @@ def validar(quantidades_por_id, rc, tolerancia=1e-6):
 
         # 44 e "44" representam o mesmo alimento, portanto não podem aparecer juntos.
         if codigo in dieta:
-            raise ValueError(f"ID de alimento repetido na dieta: {codigo}.")  # ID (identificador)
+            raise ValueError(f"ID de alimento repetido na dieta: {codigo}.") 
 
         dieta[codigo] = _quantidade(valor)
 
@@ -99,9 +99,9 @@ def validar(quantidades_por_id, rc, tolerancia=1e-6):
     desconhecidos = sorted(set(dieta) - set(ids))
 
     if ausentes or desconhecidos:
-        raise ValueError(f"IDs ausentes: {ausentes}; IDs desconhecidos: {desconhecidos}.")  # IDs (identificadores)
+        raise ValueError(f"IDs ausentes: {ausentes}; IDs desconhecidos: {desconhecidos}.")
 
-    # As funções originais operam sobre uma sequência. Montá-la por consulta ao ID (identificador)
+    # As funções originais operam sobre uma sequência. Montá-la por consulta ao ID
     # impede que a ordem de inserção do dicionário altere a associação dos alimentos.
     x = [dieta[codigo] for codigo in ids]
 
@@ -113,21 +113,21 @@ def validar(quantidades_por_id, rc, tolerancia=1e-6):
 
         nome = func.__name__
 
-        # Evitar tratar Mcal (megacalorias), gramas, kg (quilogramas) e pontos percentuais como a mesma unidade.
+        # Evitar tratar Mcal, gramas, kg e pontos percentuais como a mesma unidade.
         if "energy" in nome:
-            escala, unidade = max(1, req.total_energy_requirement), "Mcal/dia"  # Mcal/dia (megacalorias por dia)
+            escala, unidade = max(1, req.total_energy_requirement), "Mcal/dia"
 
         elif "protein" in nome:
-            escala, unidade = max(1, req.metabolizable_protein), "g/dia"  # g/dia (gramas por dia)
+            escala, unidade = max(1, req.metabolizable_protein), "g/dia"
 
         elif nome == "calcium_constraint":
-            escala, unidade = max(1, req.calcium), "g/dia"  # g/dia (gramas por dia)
+            escala, unidade = max(1, req.calcium), "g/dia"
 
         elif nome == "phosphorus_constraint":
             escala = max(1, req.phosphorus, req.process_based_phosphorus)
-            unidade = "g/dia"  # g/dia (gramas por dia)
+            unidade = "g/dia"
 
-        elif "DMI" in nome:  # DMI (consumo de matéria seca)
+        elif "DMI" in nome:  #consumo de matéria seca
             escala, unidade = max(1, req.dry_matter), "kg_MS/dia"
 
         else:
@@ -135,7 +135,7 @@ def validar(quantidades_por_id, rc, tolerancia=1e-6):
 
         residuo = float(func(x, rc))
 
-        # Exemplo: para MP (proteína metabolizável) de 2.000 g (gramas) e tolerância 0,000001, a margem é 0,002 g (gramas).
+        # Exemplo: para MP (proteína metabolizável) de 2.000 g e tolerância 0,000001, a margem é 0,002 g.
         tol = tolerancia * escala
         linhas.append({"restricao": nome, "residuo": residuo,
                        "unidade": unidade, "tolerancia": tol,
