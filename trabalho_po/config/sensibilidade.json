@@ -1,0 +1,12 @@
+{
+  "id_alimento_preco": 110,
+  "multiplicadores_preco": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "multiplicadores_energia": [
+    1.0,
+    1.1
+  ]
+}
