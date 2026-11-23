@@ -107,29 +107,6 @@ Três níveis de preço por dois de energia geram seis cenários. O aumento de
 energia é uma perturbação controlada da exigência, mantendo o mesmo leite no
 caso estático. Ele não calcula automaticamente uma nova produção de leite.
 
-## `economia.json`: preço do leite e origem
-
-Este arquivo será copiado na etapa econômica. O valor `null` indica que o dado
-ainda precisa ser informado; não equivale a preço zero.
-
-| Campo | Significado |
-| --- | --- |
-| `moeda` | USD (dólares americanos), conferido pelo cálculo econômico. |
-| `unidade_preco_leite` | USD/kg (dólares americanos por quilograma) de leite, compatível com a produção em kg (quilogramas). |
-| `arquivo_preco_leite` | Exportação local `trabalho_po/dados/milk-price-wisconsin-2013.csv`, obtida no Quick Stats. |
-| `preco_leite_USD_por_kg` | Média simples dos 12 preços mensais de 2013, convertida automaticamente para dólares americanos por quilograma. |
-| `fonte_preco_leite` | URL (localizador uniforme de recursos, ou endereço na internet) e identificação da fonte consultada. |
-| `periodo_preco_leite` | Período e localidade da observação, para interpretar o resultado. |
-| `observacao` | Descrição da origem ou da conversão física realizada. |
-
-`preco_leite.py` lê a exportação de Wisconsin em 2013 e calcula a média dos
-12 meses, excluindo a linha de resumo `MARKETING YEAR`. A média é 20,30 dólares
-americanos por 100 libras. O programa divide por 45,359237 para obter
-aproximadamente 0,4475383922353015 dólar americano por quilograma, sem câmbio.
-Não há digitação interativa do preço. `economia.py` calcula receita = preço × kg (quilogramas) leite e
-IOFC (margem sobre o custo alimentar) = receita − custo alimentar. IOFC (margem sobre o custo alimentar) é margem sobre custo alimentar, não lucro
-líquido. A comparação inicial é estática e usa a mesma produção nos dois métodos.
-
 ## Gravação dos arquivos
 
 `arquivos.salvar()` escreve diretamente o JSON (Notação de Objetos JavaScript) de destino e substitui seu

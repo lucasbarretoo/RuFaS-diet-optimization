@@ -1,3 +1,27 @@
+# rufas-diet-optimization
+
+Este repositório é um **fork acadêmico do [RuFaS (Ruminant Farm Systems, modelo de sistemas de produção de ruminantes)](https://github.com/RuminantFarmSystems/RuFaS)**, desenvolvido como trabalho da disciplina de Pesquisa Operacional. O projeto original simula a produção de fazendas leiteiras e seus impactos ambientais; este fork concentra o estudo na formulação de dietas.
+
+## Objetivo do fork
+
+Desenvolver e avaliar um módulo de **formulação de dietas de menor custo para vacas leiteiras**, utilizando os dados e as funções nutricionais do RuFaS e a PuLP (biblioteca de modelagem de programação linear em Python).
+
+O trabalho contempla:
+
+- Modelar as quantidades dos ingredientes como variáveis de decisão, minimizando o custo alimentar e respeitando as restrições nutricionais e os limites de inclusão.
+- Utilizar a referência NASEM (Academias Nacionais de Ciências, Engenharia e Medicina) 2021, conforme implementada no simulador, e expressar os valores monetários em dólares americanos.
+- Aproximar localmente as restrições não lineares por Taylor de primeira ordem, com gradiente estimado por diferenças finitas, e validar as dietas nas funções nutricionais originais.
+- Analisar a sensibilidade da dieta e do custo a mudanças nos preços dos ingredientes e nas exigências energéticas.
+- Integrar o módulo à simulação e comparar o impacto na produtividade simulada com a formulação original, mantendo a análise de custos.
+
+O módulo possui formulação estática de uma vaca por dia, resultados de análise de sensibilidade e execução anual integrada no modo de animais e nutrição do simulador, com reformulação diária. A avaliação de desempenho compara a produtividade anual simulada entre os métodos, mantendo a análise dos custos das dietas. O procedimento usa uma dieta válida do otimizador original como referência e não garante ótimo global do problema nutricional não linear.
+
+O código e os documentos do trabalho estão em [`trabalho_po/`](trabalho_po/). Consulte as [instruções do trabalho](trabalho_po/README.md) para conhecer a estrutura, as configurações e os comandos de execução.
+
+Os créditos e os arquivos de licença do RuFaS original são mantidos. A documentação original está apresentada a seguir.
+
+---
+
 [![Flake8](https://img.shields.io/badge/Flake8-passed-brightgreen)](https://github.com/RuminantFarmSystems/MASM/actions/workflows/combined_format_lint_test_mypy.yml)
 [![Pytest](https://img.shields.io/badge/Pytest-passed-brightgreen)](https://github.com/RuminantFarmSystems/MASM/actions/workflows/combined_format_lint_test_mypy.yml)
 [![Coverage](https://img.shields.io/badge/Coverage-99%25-brightgreen)](https://github.com/RuminantFarmSystems/MASM/actions/workflows/combined_format_lint_test_mypy.yml)
